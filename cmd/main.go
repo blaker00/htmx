@@ -10,6 +10,7 @@ import (
 
 func main() {
 	http.HandleFunc("/", handler.RootHandler)
+	http.HandleFunc("/htmx", handler.HTMX)
 
 	fmt.Println("Starting webserver on port 8080.")
 	log.Fatal(http.ListenAndServe(":8080", nil))

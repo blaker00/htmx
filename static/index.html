@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <title>Main Page</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <input type="text" name="q"
+    hx-get="/htmx"
+    hx-trigger="keyup delay:500ms changed"
+    hx-target="#search-results"
+    placeholder="Search..."
+>
+<div id="search-results"></div>
+
     
 </body>
 </html>
