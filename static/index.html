@@ -17,17 +17,14 @@
 <div id="search-results"></div></div>
 </div>
 
-<hr>
+<br><br><br>
 
-<div>
-    <button hx-get="/indicator">
-        spin test 
-        <img class="htmx-indicator" src="/spinner.svg" />
-    </button>
+<div hx-get="/indicator" hx-target="#results" hx-indicator="#spinner">
+    <button>Indicator test</button>
+    <img id="spinner" class="htmx-indicator" src="/spinner.svg" />
 </div>
-
-
-
+<br><br><br>
+<div id="results"></div>
     
 </body>
 </html>
