@@ -1,8 +1,10 @@
 package handler
 
 import (
+	"fmt"
 	"net/http"
 	"os"
+	"time"
 )
 
 func RootHandler(w http.ResponseWriter, r *http.Request) {
@@ -35,4 +37,11 @@ func HTMX(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "error processing webpage", http.StatusInternalServerError)
 	}
 
+}
+
+func Indicator(w http.ResponseWriter, r *http.Request) {
+
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	time.Sleep(5 * time.Second)
+	fmt.Fprintf(w, "<h2>5 seconds elapsed</h2>")
 }

@@ -7,13 +7,26 @@
     <title>Main Page</title>
 </head>
 <body>
+<div>
     <input type="text" name="q"
     hx-get="/htmx"
     hx-trigger="keyup delay:500ms changed"
     hx-target="#search-results"
     placeholder="Search..."
 >
-<div id="search-results"></div>
+<div id="search-results"></div></div>
+</div>
+
+<hr>
+
+<div>
+    <button hx-get="/indicator">
+        spin test 
+        <img class="htmx-indicator" src="/spinner.svg" />
+    </button>
+</div>
+
+
 
     
 </body>
